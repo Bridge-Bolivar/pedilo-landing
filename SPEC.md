@@ -21,7 +21,7 @@ El bordó del punto en `pedilo.` es `#df5550`, el mismo de la tapa de la propues
 1. El puente acompaña como fondo en blanco y negro, desenfocado y oscuro. Las tarjetas son protagonistas.
 2. Lockup centrado junto a las tarjetas, en un `h1`: isotipo claro (`assets/mark.png`) a la izquierda de `pedilo.` y el punto bordó. Debajo, San Carlos de Bolívar con el pin de Phosphor, en hueso sólido.
 3. Dos tarjetas con imágenes generadas de gastronomía y productos de comercios, lado a lado también en el celular. Logo y tarjetas forman un único bloque centrado. Íconos de cubiertos y comercio, flecha, categoría, título y descripción. Delivery va a `delivery.pedilo.net`, Market a `market.pedilo.net`.
-4. «Conocé Pedilo» lleva a la hoja hueso: una frase, un bento compacto (foto del puente, cifras de muestra y el mail). También se accede al scrollear. Pie con legales (los de Delivery, hasta que haya páginas propias).
+4. «Conocé Pedilo» lleva a la hoja hueso: el mapa del partido de Bolívar, las cifras de la ciudad, testimonios de vecinos y comerciantes, y preguntas frecuentes. También se accede al scrollear. Pie con legales y contacto.
 
 Sin JavaScript y sin framework. El isotipo claro de la tapa sigue en `assets/mark.png`, para fondos oscuros.
 

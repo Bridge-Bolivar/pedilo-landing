@@ -1,0 +1,26 @@
+[
+  {
+    "id": "mariana-r",
+    "name": "Mariana R.",
+    "role": "Vecina de Bolívar · Pedido frecuente",
+    "avatar": "assets/people/mariana.webp",
+    "quote": "Llegar a casa un viernes y tener las cartas de los locales de Bolívar en el celu para pedir en dos toques te cambia la noche. Rápido y sin vueltas.",
+    "app": "Delivery"
+  },
+  {
+    "id": "lucas-b",
+    "name": "Lucas B.",
+    "role": "Vecino de Bolívar · Comprador local",
+    "avatar": "assets/people/lucas.webp",
+    "quote": "Antes tenía que recorrer media ciudad o preguntar por grupos para saber qué negocio tenía stock. Con la vidriera encontrás enseguida lo que buscás acá.",
+    "app": "Market"
+  },
+  {
+    "id": "marcelo-g",
+    "name": "Marcelo G.",
+    "role": "Comerciante de Bolívar · Av. San Martín",
+    "avatar": "assets/people/marcelo.webp",
+    "quote": "Sumar el local a Pedilo nos abrió una puerta directa a clientes nuevos que no pasan todos los días por la vereda. Es vidriera viva de la ciudad.",
+    "app": "Comercios"
+  }
+]
