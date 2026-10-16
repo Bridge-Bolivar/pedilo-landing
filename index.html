@@ -3,178 +3,123 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pedilo · Delivery y Market en San Carlos de Bolívar</title>
-<meta name="description" content="Pedilo es la plataforma de Bolívar para pedir comida con envío en minutos y para comprar y vender entre vecinos. Dos apps, una sola marca.">
-<meta name="theme-color" content="#faf6f1">
+<title>Pedilo · San Carlos de Bolívar</title>
+<meta name="description" content="Pedilo es de San Carlos de Bolívar. Delivery lleva lo que se pide ahora. Market es la vidriera del comercio de acá.">
+<meta name="theme-color" content="#2a2a2a">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
 <link rel="apple-touch-icon" href="assets/favicon-192.png">
 <link rel="canonical" href="https://pedilo.net/">
+<link rel="preload" as="image" href="assets/bolivar.webp">
+<link rel="stylesheet" href="styles.css?v=11">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Pedilo · Delivery y Market en Bolívar">
-<meta property="og:description" content="Pedí comida con envío en minutos o comprá y vendé entre vecinos. Dos apps, una sola marca.">
+<meta property="og:title" content="Pedilo · San Carlos de Bolívar">
+<meta property="og:description" content="Delivery lleva lo que se pide ahora. Market es la vidriera del comercio de acá.">
 <meta property="og:url" content="https://pedilo.net/">
-<meta property="og:image" content="https://pedilo.net/assets/og.png">
+<meta property="og:image" content="https://pedilo.net/assets/og.jpg">
 <meta property="og:locale" content="es_AR">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --cream: #faf6f1;
-    --cream-mid: #ede4d9;
-    --cream-soft: #f3efe8;
-    --ink: #1c1917;
-    --ink-muted: #57534e;
-    --amber: #f5b335; /* solo para el foco de teclado */
-    --delivery: #9a0002;
-    --delivery-dark: #6b0001;
-    --market: #013e37;
-    --market-dark: #022b26;
-    --radius: 20px;
-  }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0; background: var(--cream); color: var(--ink);
-    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    font-size: 17px; line-height: 1.5; -webkit-font-smoothing: antialiased;
-  }
-  a { color: inherit; }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
-
-  header { padding: 28px 0 8px; }
-  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 800; font-size: 22px; letter-spacing: -0.01em; }
-  .brand img { width: 40px; height: auto; }
-
-  .hero { padding: 36px 0 28px; text-align: center; }
-  .hero img { width: 112px; height: auto; margin-bottom: 18px; }
-  .hero h1 { font-size: clamp(32px, 6vw, 56px); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 14px; font-weight: 800; }
-  .hero h1 em { font-style: normal; color: var(--delivery); }
-  .hero p { font-size: clamp(17px, 2.2vw, 21px); color: var(--ink-muted); max-width: 640px; margin: 0 auto; }
-  .place { display: inline-block; margin-top: 18px; padding: 6px 14px; border: 1px solid var(--cream-mid); border-radius: 999px; font-size: 14px; font-weight: 600; color: var(--ink-muted); background: #fff; }
-
-  .apps { display: grid; grid-template-columns: 1fr; gap: 18px; padding: 24px 0 40px; }
-  @media (min-width: 760px) { .apps { grid-template-columns: 1fr 1fr; gap: 24px; } }
-  .card {
-    display: flex; flex-direction: column; gap: 14px;
-    background: #fff; border: 1px solid var(--cream-mid); border-radius: var(--radius);
-    padding: 28px 26px 26px; position: relative; overflow: hidden;
-  }
-  .card::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 6px; background: var(--c); }
-  .card .tag { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--c); }
-  .card h2 { margin: 0; font-size: 28px; line-height: 1.15; letter-spacing: -0.01em; font-weight: 800; }
-  .card p { margin: 0; color: var(--ink-muted); }
-  .card ul { margin: 4px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; }
-  .card li { display: flex; gap: 10px; align-items: flex-start; font-size: 16px; }
-  .card li::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--c); margin-top: 9px; }
-  .card .who { font-size: 14px; color: var(--ink-muted); }
-  .btn {
-    margin-top: auto; display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-    padding: 14px 20px; border-radius: 14px; background: var(--c); color: #fff; text-decoration: none;
-    font-weight: 700; font-size: 17px; transition: background .15s ease, transform .15s ease;
-  }
-  .btn:hover { background: var(--cd); }
-  .btn:active { transform: translateY(1px); }
-  .btn:focus-visible, a:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
-  .btn svg { width: 18px; height: 18px; }
-  .delivery { --c: var(--delivery); --cd: var(--delivery-dark); }
-  .market { --c: var(--market); --cd: var(--market-dark); }
-
-  .how { padding: 8px 0 44px; }
-  .how h3 { text-align: center; font-size: 15px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-muted); margin: 0 0 18px; }
-  .steps { display: grid; grid-template-columns: 1fr; gap: 12px; }
-  @media (min-width: 760px) { .steps { grid-template-columns: repeat(3, 1fr); } }
-  .step { background: var(--cream-soft); border-radius: 16px; padding: 18px 18px 16px; }
-  .step b { display: block; font-size: 17px; margin-bottom: 4px; }
-  .step span { color: var(--ink-muted); font-size: 15px; }
-
-  footer { border-top: 1px solid var(--cream-mid); padding: 26px 0 36px; font-size: 15px; color: var(--ink-muted); }
-  footer .row { display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; justify-content: space-between; }
-  footer nav { display: flex; flex-wrap: wrap; gap: 8px 18px; }
-  footer a { text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
-  .mini { margin-top: 10px; font-size: 13px; }
-</style>
 </head>
 <body>
 
-<header class="wrap">
-  <a class="brand" href="/" aria-label="Pedilo, inicio">
-    <img src="assets/logo.png" alt="" width="40" height="42">
-    <span>Pedilo</span>
-  </a>
-</header>
-
-<main class="wrap">
-  <section class="hero">
-    <img src="assets/logo.png" alt="Logo de Pedilo: una burbuja de chat con forma de P" width="112" height="116">
-    <h1>Lo que necesitás, <em>pedilo</em>.</h1>
-    <p>La plataforma de Bolívar para pedir comida con envío en minutos y para comprar y vender entre vecinos. Dos apps, una sola marca.</p>
-    <span class="place">San Carlos de Bolívar · Buenos Aires</span>
-  </section>
-
-  <section class="apps" aria-label="Nuestras apps">
-    <article class="card delivery">
-      <span class="tag">Delivery</span>
-      <h2>Pedí comida y seguila hasta tu puerta</h2>
-      <p>Las cartas de los comercios de Bolívar, pago con Mercado Pago o en efectivo, y el repartidor en el mapa en tiempo real.</p>
-      <ul>
-        <li>Pedidos con seguimiento GPS y PIN de entrega</li>
-        <li>Juntadas: dividí la cuenta con amigos</li>
-        <li>Panel para comercios con comandera y WhatsApp</li>
-      </ul>
-      <span class="who">Para vecinos, comercios gastronómicos y repartidores.</span>
-      <a class="btn" href="https://delivery.pedilo.net">
-        Entrar a Pedilo Delivery
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+<main class="stage">
+  <div class="frame">
+    <img class="frame-photo" src="assets/bolivar.webp" alt="Puente colgante de San Carlos de Bolívar" width="1600" height="1474" fetchpriority="high">
+    <div class="frame-shade" aria-hidden="true"></div>
+    <header>
+      <h1>
+        <a class="brand" href="/">
+          <img src="assets/mark.png" alt="" width="40" height="40">
+          <span class="wordmark">pedilo<span>.</span></span>
+        </a>
+      </h1>
+      <p class="place">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24a80,80,0,0,0-80,80c0,72,80,128,80,128s80-56,80-128A80,80,0,0,0,128,24Zm0,112a32,32,0,1,1,32-32A32,32,0,0,1,128,136Z" opacity="0.2"></path><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"></path></svg>
+        San Carlos de Bolívar
+      </p>
+    </header>
+    <div class="cards">
+      <a class="card" href="https://delivery.pedilo.net">
+        <img src="assets/gastronomia.webp" alt="" width="900" height="600">
+        <span class="card-shade" aria-hidden="true"></span>
+        <svg class="card-ghost" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M35.58,98.06a16,16,0,0,1-3.23-13.44C39.78,49.5,80,24,128,24s88.22,25.5,95.65,60.62A16,16,0,0,1,207.93,104H48.07A16,16,0,0,1,35.58,98.06Zm193.68,54.42-41.13,15L151,152.57a8,8,0,0,0-5.94,0l-37,14.81L71,152.57a8,8,0,0,0-5.7-.09l-44,16a8,8,0,0,0,5.47,15L40,178.69V184a40,40,0,0,0,40,40h96a40,40,0,0,0,40-40v-9.67l18.73-6.81a8,8,0,1,0-5.47-15ZM24,136H232a8,8,0,0,0,0-16H24a8,8,0,0,0,0,16Z"/></svg>
+        <span class="kind">Gastronómicos</span>
+        <span class="card-copy">
+          <h2>Pedí ahora</h2>
+          <p>Las cartas, hasta tu puerta.</p>
+        </span>
+        <span class="card-row">
+          <span class="shops">
+            <img src="assets/shops/kom.svg" alt="La Familia Kom" width="28" height="28" loading="lazy">
+            <img src="assets/shops/nanna.svg" alt="Nanna Restaurante" width="28" height="28" loading="lazy">
+            <img src="assets/shops/oasis.svg" alt="Oasis Helados" width="28" height="28" loading="lazy">
+          </span>
+          <span class="card-count">12</span>
+          <span class="card-go">Pedí <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg></span>
+        </span>
       </a>
-    </article>
-
-    <article class="card market">
-      <span class="tag">Market</span>
-      <h2>Comprá y vendé entre vecinos</h2>
-      <p>Avisos de la ciudad, catálogos de comercios y ventas en vivo, todo en un solo lugar y sin intermediarios de afuera.</p>
-      <ul>
-        <li>Publicá en minutos y compartí por WhatsApp</li>
-        <li>Salas de puja y live shopping</li>
-        <li>Catálogo propio para cada comercio</li>
-      </ul>
-      <span class="who">Para vecinos que venden, comercios y la Cámara Comercial.</span>
-      <a class="btn" href="https://market.pedilo.net">
-        Entrar a Pedilo Market
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <a class="card" href="https://market.pedilo.net">
+        <img src="assets/comercios.webp" alt="" width="900" height="600">
+        <span class="card-shade" aria-hidden="true"></span>
+        <svg class="card-ghost" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M231.69,93.81,217.35,43.6A16.07,16.07,0,0,0,202,32H54A16.07,16.07,0,0,0,38.65,43.6L24.31,93.81A7.94,7.94,0,0,0,24,96v16a40,40,0,0,0,16,32v72a8,8,0,0,0,8,8H208a8,8,0,0,0,8-8V144a40,40,0,0,0,16-32V96A7.94,7.94,0,0,0,231.69,93.81ZM88,112a24,24,0,0,1-35.12,21.26,7.88,7.88,0,0,0-1.82-1.06A24,24,0,0,1,40,112v-8H88Zm64,0a24,24,0,0,1-48,0v-8h48Zm64,0a24,24,0,0,1-11.07,20.2,8.08,8.08,0,0,0-1.8,1.05A24,24,0,0,1,168,112v-8h48Z"/></svg>
+        <span class="kind">Comercios</span>
+        <span class="card-copy">
+          <h2>Mirá la vidriera</h2>
+          <p>Los locales de acá.</p>
+        </span>
+        <span class="card-row">
+          <span class="shops">
+            <img src="assets/shops/libreria-brown.svg" alt="Librería Brown" width="28" height="28" loading="lazy">
+            <img src="assets/shops/calzados-ideal.svg" alt="Calzados Ideal" width="28" height="28" loading="lazy">
+            <img src="assets/shops/modas-norma.svg" alt="Modas Norma" width="28" height="28" loading="lazy">
+          </span>
+          <span class="card-count">36</span>
+          <span class="card-go">Mirá <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg></span>
+        </span>
       </a>
-    </article>
-  </section>
-
-  <section class="how" aria-label="Cómo funciona">
-    <h3>Hecho en Bolívar, para Bolívar</h3>
-    <div class="steps">
-      <div class="step"><b>Una cuenta</b><span>La misma identidad para las dos apps.</span></div>
-      <div class="step"><b>Comercios de acá</b><span>Cada peso queda en la ciudad.</span></div>
-      <div class="step"><b>Sin vueltas</b><span>Se usa desde el celular, sin instalar nada.</span></div>
     </div>
-  </section>
+    <a class="discover" href="#nosotros">Conocé Pedilo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg></a>
+  </div>
 </main>
 
-<footer>
-  <div class="wrap">
-    <div class="row">
-      <div>
-        <!-- TODO: reemplazar por el WhatsApp y el mail de contacto definitivos -->
-        <a href="https://wa.me/5492314000000">WhatsApp</a> · <a href="mailto:hola@pedilo.net">hola@pedilo.net</a>
+<section class="sheet" id="nosotros" aria-labelledby="about-title">
+  <h2 class="lead" id="about-title">Pedilo es de San Carlos de Bolívar.</h2>
+  <div class="bento">
+    <figure class="tile tile-place">
+      <img src="assets/bolivar.webp" alt="Puente colgante de San Carlos de Bolívar" width="1600" height="1474">
+    </figure>
+    <article class="tile tile-stat">
+      <p class="num">36</p>
+      <p>locales en la vidriera</p>
+    </article>
+    <article class="tile tile-stat">
+      <p class="num">18<small>min</small></p>
+      <p>del pedido a la puerta</p>
+    </article>
+    <article class="tile tile-chart">
+      <p class="chart-title">Cuándo se pide</p>
+      <div class="hours" role="img" aria-label="Mañana 4 de 10, mediodía 9 de 10, noche 6 de 10. Cifras de muestra.">
+        <div class="hour"><i style="--h: 40%"></i><span>Mañana</span></div>
+        <div class="hour"><i style="--h: 100%"></i><span>Mediodía</span></div>
+        <div class="hour"><i style="--h: 64%"></i><span>Noche</span></div>
       </div>
-      <nav aria-label="Legales">
-        <a href="https://delivery.pedilo.net/terminos">Términos</a>
-        <a href="https://delivery.pedilo.net/privacidad">Privacidad</a>
-        <a href="https://delivery.pedilo.net/arrepentimiento">Botón de arrepentimiento</a>
-      </nav>
-    </div>
-    <div class="mini">© 2026 Pedilo · San Carlos de Bolívar, Buenos Aires, Argentina</div>
+    </article>
+    <p class="tile tile-note">Delivery lleva lo que se pide ahora. Market es la vidriera del comercio de acá.</p>
+    <a class="tile tile-mail" href="mailto:hola@pedilo.net">
+      <span>¿Tenés un local?</span>
+      <strong>Escribinos</strong>
+    </a>
   </div>
-</footer>
+  <p class="sample">Cifras de muestra.</p>
+  <footer>
+    <a href="mailto:hola@pedilo.net">hola@pedilo.net</a>
+    <nav aria-label="Legales">
+      <a href="https://delivery.pedilo.net/terminos">Términos</a>
+      <a href="https://delivery.pedilo.net/privacidad">Privacidad</a>
+      <a href="https://delivery.pedilo.net/arrepentimiento">Botón de arrepentimiento</a>
+    </nav>
+  </footer>
+</section>
 
 </body>
 </html>

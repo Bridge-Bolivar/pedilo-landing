@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <circle cx="32" cy="32" r="32" fill="#1b728b"/>
+  <!-- Ice cream swirl & waffle cone -->
+  <!-- Waffle cone -->
+  <polygon points="32,48 24,34 40,34" fill="#f4caa1"/>
+  <path d="M26,37 l12,0 M28,41 l8,0 M30,45 l4,0" stroke="#d49b6a" stroke-width="0.8"/>
+  <!-- Ice cream scoop -->
+  <circle cx="32" cy="27" r="9" fill="#fff5ea"/>
+  <circle cx="27" cy="30" r="5" fill="#f8d7da"/>
+  <circle cx="37" cy="30" r="5" fill="#fff5ea"/>
+  <!-- Cherry / sun topper -->
+  <circle cx="32" cy="17" r="3" fill="#e63946"/>
+</svg>

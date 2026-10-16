@@ -1,0 +1,159 @@
+:root {
+  --ash: #2c2a28;
+  --bone: #f3f0eb;
+  --paper: #f6f3ee;
+  --field: #e6e1d8;
+  --ink: #1c1917;
+  --muted: #6e665e;
+  --dot: #df5550;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scrollbar-color: var(--ash) var(--field); scroll-behavior: smooth; }
+::selection { background: var(--ash); color: var(--bone); }
+body { margin: 0; background: var(--ash); color: var(--ink); font-family: system-ui, "Segoe UI", Roboto, sans-serif; line-height: 1.4; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+
+.stage { position: sticky; top: 0; z-index: 0; height: 100vh; height: 100svh; min-height: 640px; }
+.frame { position: relative; isolation: isolate; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 32px; height: 100%; overflow: hidden; padding: 64px 24px; }
+.frame-photo { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 65% 48%; filter: grayscale(1); }
+/* The softened bridge supports the central product choices. */
+.frame-shade { position: absolute; z-index: -1; inset: 0; background: radial-gradient(ellipse at center, rgb(20 22 21 / .48), transparent 80%), linear-gradient(180deg, rgb(20 22 21 / .55), rgb(20 22 21 / .42) 50%, rgb(20 22 21 / .6)); pointer-events: none; }
+header { display: flex; flex-direction: column; align-items: center; width: 100%; }
+h1 { margin: 0; font: inherit; }
+.brand { display: inline-flex; align-items: center; gap: 12px; color: var(--bone); font-size: clamp(38px, 4vw, 46px); font-weight: 700; letter-spacing: -.04em; line-height: 1; text-decoration: none; }
+.brand img { width: 40px; height: 40px; object-fit: contain; }
+.wordmark > span { color: var(--dot); }
+.brand:focus-visible, .discover:focus-visible { outline: 3px solid var(--bone); outline-offset: 6px; border-radius: 8px; }
+.place { display: flex; align-items: center; justify-content: center; gap: 7px; margin: 16px 0 0; color: var(--bone); font-size: 11px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; }
+.place svg { flex: none; width: 16px; height: 16px; }
+
+.cards { width: min(680px, 100%); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.card { position: relative; display: flex; flex-direction: column; justify-content: flex-end; gap: 12px; aspect-ratio: 3 / 4; padding: 14px; overflow: hidden; border-radius: 22px; color: var(--bone); text-decoration: none; box-shadow: 0 14px 36px rgb(12 16 14 / .28); }
+.card:focus-visible { outline: 3px solid var(--bone); outline-offset: 5px; }
+.card > img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; transition: transform 640ms var(--ease); }
+.card-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgb(28 25 23 / .04) 38%, rgb(28 25 23 / .55) 64%, rgb(28 25 23 / .96)); }
+.card-shade::before { content: ""; position: absolute; right: 0; bottom: 0; left: 0; height: 46%; backdrop-filter: blur(8px); -webkit-mask-image: linear-gradient(transparent, #000 72%); mask-image: linear-gradient(transparent, #000 72%); }
+.card-ghost { position: absolute; right: -42px; bottom: -58px; z-index: 0; width: 176px; height: 176px; color: rgb(243 240 235 / .22); pointer-events: none; }
+.kind { position: absolute; top: 12px; right: 12px; padding: 6px 10px; border-radius: 999px; background: rgb(28 25 23 / .45); color: var(--bone); font-size: 12px; font-weight: 600; line-height: 1.2; }
+.card-copy, .card-row { position: relative; z-index: 1; }
+.card h2 { margin: 0; font-size: clamp(20px, 2.2vw, 25px); font-weight: 700; letter-spacing: -.035em; line-height: 1.1; }
+.card p { margin: 6px 0 0; max-width: 16em; color: #e4dfd8; font-size: 13px; line-height: 1.35; }
+.card-row { display: flex; align-items: center; gap: 8px; }
+.shops { display: flex; }
+.shops img { width: 28px; height: 28px; margin-left: -8px; border-radius: 50%; box-shadow: 0 0 0 2px #1c1917; }
+.shops img:first-child { margin-left: 0; }
+.card-count { font-size: 13px; font-weight: 650; }
+.card-go { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border-radius: 999px; background: var(--bone); color: var(--ink); font-size: 14px; font-weight: 650; }
+.card-go svg { width: 14px; height: 14px; }
+.discover { position: absolute; bottom: 18px; display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 44px; margin-top: 20px; color: var(--bone); font-size: 12px; text-decoration: none; }
+.discover svg { transition: transform 240ms var(--ease); }
+@media (hover: hover) {
+  .card:hover { transform: translateY(-4px); }
+  .card:hover > img { transform: scale(1.04); }
+  .discover:hover svg { transform: translateY(3px); }
+  .sheet footer a:hover { color: var(--ink); text-decoration: underline; }
+  .tile-mail:hover { background: #242220; }
+  .tile-mail:hover strong { text-decoration: underline; text-underline-offset: 4px; }
+}
+.card:active { transform: translateY(-1px); }
+
+/* One entrance: identity first, then the two product choices (640 ms total).
+   Individual translate keeps the entrance independent of hover transforms. */
+@keyframes brand-arrive {
+  from { opacity: .25; }
+  to { opacity: 1; }
+}
+@keyframes card-arrive {
+  from { opacity: .25; translate: 0 12px; }
+  to { opacity: 1; translate: 0 0; }
+}
+@keyframes tile-in {
+  from { opacity: .2; translate: 0 16px; }
+  to { opacity: 1; translate: 0 0; }
+}
+@keyframes bar-in {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .frame > header { animation: brand-arrive 380ms var(--ease) backwards; }
+  .card { animation: card-arrive 460ms var(--ease) 100ms backwards; }
+  .card:nth-child(2) { animation-delay: 180ms; }
+  .frame > header:focus-within, .card:focus-visible { animation: none; }
+  .tile { animation: tile-in 640ms var(--ease) both; }
+  .hour i { animation: bar-in 700ms var(--ease) both; }
+  @supports (animation-timeline: view()) {
+    .tile, .hour i { animation-timeline: view(); animation-range: entry 12% cover 32%; }
+  }
+}
+
+.sheet { position: relative; z-index: 1; display: flex; flex-direction: column; padding: clamp(48px, 7vw, 88px) max(20px, calc((100vw - 1040px) / 2)) 24px; border-radius: 28px 28px 0 0; background: var(--bone); color: var(--ink); box-shadow: 0 -20px 60px rgb(20 18 16 / .16); }
+.lead { max-width: 16em; margin: 0; font-size: clamp(28px, 3.6vw, 44px); font-weight: 500; letter-spacing: -.03em; line-height: 1.15; text-wrap: balance; }
+.bento { display: grid; grid-template-columns: 1.2fr 0.9fr 0.9fr; grid-template-areas: "place a b" "place chart chart" "note note mail"; gap: 12px; margin: 32px 0 12px; }
+.tile { border-radius: 16px; background: var(--paper); }
+.tile-place { grid-area: place; margin: 0; overflow: hidden; min-height: 240px; }
+.tile-place img { width: 100%; height: 100%; object-fit: cover; object-position: 65% 48%; filter: grayscale(1); }
+.bento > :nth-child(2) { grid-area: a; }
+.bento > :nth-child(3) { grid-area: b; }
+.tile-chart { grid-area: chart; }
+.tile-note { grid-area: note; }
+.tile-mail { grid-area: mail; }
+.tile-stat, .tile-chart, .tile-note { padding: 18px 18px 16px; }
+.tile-stat p, .tile-note { margin: 0; }
+.num { font-size: clamp(40px, 4.6vw, 56px); font-weight: 650; letter-spacing: -.03em; line-height: .9; font-variant-numeric: tabular-nums; }
+.num small { margin-left: 4px; font-size: 18px; font-weight: 600; letter-spacing: 0; }
+.tile-stat p:last-child, .hour span, .sample { color: var(--muted); font-size: 13px; line-height: 1.3; }
+.tile-stat p:last-child { margin-top: 10px; max-width: 12em; }
+.chart-title { margin: 0 0 12px; font-size: 15px; font-weight: 650; letter-spacing: -.02em; }
+.hours { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; height: 112px; }
+.hour { display: grid; grid-template-rows: 1fr auto; gap: 8px; min-height: 0; }
+.hour i { display: block; align-self: end; width: 100%; height: var(--h); border-radius: 8px 8px 3px 3px; background: var(--ash); transform-origin: bottom; }
+.hour:nth-child(2) i { background: var(--ink); }
+.hour span { text-align: center; }
+.tile-note { display: flex; align-items: flex-end; font-size: clamp(18px, 2vw, 22px); font-weight: 500; letter-spacing: -.03em; line-height: 1.3; text-wrap: pretty; }
+.sample { margin: 0 0 36px; }
+.tile-mail { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 88px; padding: 18px 22px; background: var(--ash); color: var(--bone); text-decoration: none; }
+.tile-mail span { color: #cfc8c0; font-size: 15px; }
+.tile-mail strong { font-size: 22px; font-weight: 650; letter-spacing: -.03em; }
+.sheet a:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; border-radius: 3px; }
+.tile-mail:focus-visible { outline-color: var(--bone); }
+footer { display: flex; flex-wrap: wrap; gap: 12px 32px; align-items: baseline; justify-content: space-between; margin-top: auto; padding-top: 20px; border-top: 1px solid #d9d3cb; color: var(--muted); font-size: 13px; }
+footer nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+footer a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; text-underline-offset: 4px; }
+
+@media (max-width: 680px) {
+  .stage { min-height: 580px; }
+  .frame { padding: 64px 14px; gap: 26px; }
+  .frame-photo { object-position: 64% 50%; }
+  .brand { font-size: 36px; gap: 10px; }
+  .brand img { width: 36px; height: 36px; }
+  .place { margin-top: 14px; font-size: 11px; letter-spacing: .1em; }
+  .cards { gap: 10px; }
+  .card { gap: 8px; padding: 10px; border-radius: 18px; }
+  .card-ghost { right: -32px; bottom: -40px; width: 116px; height: 116px; }
+  .kind { top: 8px; right: 8px; padding: 4px 7px; font-size: 11px; }
+  .card h2 { font-size: 16px; }
+  .card p { font-size: 12px; }
+  .shops img { width: 22px; height: 22px; }
+  .card-go { min-height: 32px; padding-inline: 10px; font-size: 13px; }
+  .discover { margin-top: 12px; }
+  .sheet { border-radius: 22px 22px 0 0; }
+  .bento { grid-template-columns: 1fr 1fr; grid-template-areas: "place place" "a b" "chart chart" "note note" "mail mail"; margin-bottom: 8px; }
+  .tile-place { min-height: 0; aspect-ratio: 16 / 8; }
+  .tile-mail { min-height: 76px; }
+  .sample { margin-bottom: 28px; }
+}
+@media (max-height: 600px) and (min-width: 681px) {
+  .stage { min-height: 530px; }
+  .frame { padding-top: 32px; }
+  .frame { gap: 20px; }
+  .cards { max-width: 560px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .card, .card > img, .discover svg, .tile, .hour i { transition: none; animation: none; }
+  .card:hover, .card:active, .card:hover > img, .discover:hover svg { transform: none; }
+}

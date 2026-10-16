@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-15T16:19:32-03:00",
+  "title": "Design System: Pedilo",
+  "extensions": {
+    "colorMeta": {
+      "dot": {
+        "role": "primary",
+        "displayName": "Punto bordó",
+        "canonical": "#df5550",
+        "tonalRamp": ["oklch(18% 0.174 25)", "oklch(28% 0.174 25)", "oklch(38% 0.174 25)", "oklch(48% 0.174 25)", "oklch(62% 0.174 25)", "oklch(74% 0.174 25)", "oklch(84% 0.174 25)", "oklch(94% 0.174 25)"]
+      },
+      "ash": {
+        "role": "neutral",
+        "displayName": "Ceniza",
+        "canonical": "#2c2a28",
+        "tonalRamp": ["oklch(18% 0.005 68)", "oklch(28% 0.005 68)", "oklch(38% 0.005 68)", "oklch(48% 0.005 68)", "oklch(62% 0.005 68)", "oklch(74% 0.005 68)", "oklch(84% 0.005 68)", "oklch(94% 0.005 68)"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "canonical": "#1c1917",
+        "tonalRamp": ["oklch(18% 0.006 56)", "oklch(28% 0.006 56)", "oklch(38% 0.006 56)", "oklch(48% 0.006 56)", "oklch(62% 0.006 56)", "oklch(74% 0.006 56)", "oklch(84% 0.006 56)", "oklch(94% 0.006 56)"]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Apagado",
+        "canonical": "#6e665e",
+        "tonalRamp": ["oklch(18% 0.016 67)", "oklch(28% 0.016 67)", "oklch(38% 0.016 67)", "oklch(48% 0.016 67)", "oklch(62% 0.016 67)", "oklch(74% 0.016 67)", "oklch(84% 0.016 67)", "oklch(94% 0.016 67)"]
+      },
+      "bone": {
+        "role": "neutral",
+        "displayName": "Hueso",
+        "canonical": "#f3f0eb",
+        "tonalRamp": ["oklch(18% 0.007 81)", "oklch(28% 0.007 81)", "oklch(38% 0.007 81)", "oklch(48% 0.007 81)", "oklch(62% 0.007 81)", "oklch(74% 0.007 81)", "oklch(84% 0.007 81)", "oklch(94% 0.007 81)"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Papel",
+        "canonical": "#f6f3ee",
+        "tonalRamp": ["oklch(18% 0.007 81)", "oklch(28% 0.007 81)", "oklch(38% 0.007 81)", "oklch(48% 0.007 81)", "oklch(62% 0.007 81)", "oklch(74% 0.007 81)", "oklch(84% 0.007 81)", "oklch(94% 0.007 81)"]
+      },
+      "field": {
+        "role": "neutral",
+        "displayName": "Campo",
+        "canonical": "#e6e1d8",
+        "tonalRamp": ["oklch(18% 0.013 82)", "oklch(28% 0.013 82)", "oklch(38% 0.013 82)", "oklch(48% 0.013 82)", "oklch(62% 0.013 82)", "oklch(74% 0.013 82)", "oklch(84% 0.013 82)", "oklch(94% 0.013 82)"]
+      },
+      "well": {
+        "role": "neutral",
+        "displayName": "Pozo",
+        "canonical": "#d9d3cb",
+        "tonalRamp": ["oklch(18% 0.013 75)", "oklch(28% 0.013 75)", "oklch(38% 0.013 75)", "oklch(48% 0.013 75)", "oklch(62% 0.013 75)", "oklch(74% 0.013 75)", "oklch(84% 0.013 75)", "oklch(94% 0.013 75)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "La palabra pedilo." },
+      "headline": { "displayName": "Headline", "purpose": "El párrafo de la hoja." },
+      "title": { "displayName": "Title", "purpose": "El título de cada tarjeta." },
+      "body": { "displayName": "Body", "purpose": "Cuerpo y la línea de Escribinos." },
+      "label": { "displayName": "Label", "purpose": "San Carlos de Bolívar, en mayúsculas." }
+    },
+    "shadows": [
+      { "name": "card", "value": "0 14px 36px rgb(12 16 14 / 0.28)", "purpose": "La pareja de tarjetas sobre el puente." },
+      { "name": "sheet", "value": "0 -28px 70px rgb(20 18 16 / 0.28)", "purpose": "El borde superior de la hoja al subir." }
+    ],
+    "motion": [
+      { "name": "rise", "value": "0.75s cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Entrada de las tarjetas. Se apaga con prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "phone", "value": "680px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Lockup",
+      "kind": "nav",
+      "refersTo": "brand",
+      "description": "Isotipo claro, la palabra pedilo y el punto bordó.",
+      "html": "<a class=\"ds-brand\" href=\"/\"><svg viewBox=\"0 0 32 32\" width=\"40\" height=\"40\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"14\" fill=\"#f3f0eb\"/></svg>pedilo<span>.</span></a>",
+      "css": ".ds-brand { display: inline-flex; align-items: center; gap: 10px; color: #f3f0eb; font: 700 44px/1 system-ui, sans-serif; letter-spacing: -0.05em; text-decoration: none; } .ds-brand span { color: #df5550; } .ds-brand:hover { opacity: 0.92; } .ds-brand:focus-visible { outline: 3px solid #f3f0eb; outline-offset: 6px; border-radius: 8px; }"
+    },
+    {
+      "name": "Lugar",
+      "kind": "custom",
+      "refersTo": "brand",
+      "description": "San Carlos de Bolívar, en hueso sólido, debajo del lockup.",
+      "html": "<p class=\"ds-place\">San Carlos de Bolívar</p>",
+      "css": ".ds-place { margin: 12px 0 0; color: #f3f0eb; font: 600 13px/1.2 system-ui, sans-serif; letter-spacing: 0.12em; text-transform: uppercase; }"
+    },
+    {
+      "name": "Tarjeta",
+      "kind": "card",
+      "refersTo": "product-card",
+      "description": "Una puerta. La foto no llega al borde. El nombre va debajo.",
+      "html": "<a class=\"ds-card\" href=\"#\"><span class=\"ds-shot\"></span><span class=\"ds-chip\" aria-hidden=\"true\"><svg viewBox=\"0 0 256 256\" width=\"16\" height=\"16\" fill=\"currentColor\"><path d=\"M200,64V168a8,8,0,0,1-13.66,5.66L140,127.31,69.66,197.66a8,8,0,0,1-11.32-11.32L128.69,116,82.34,69.66A8,8,0,0,1,88,56H192A8,8,0,0,1,200,64Z\"/></svg></span><p class=\"ds-tag\">Gastronómicos</p><h2>Pedí ahora</h2><p>Las cartas, hasta tu puerta.</p></a>",
+      "css": ".ds-card { display: block; width: 260px; padding: 8px 8px 14px; border-radius: 22px; background: #f6f3ee; color: #1c1917; text-decoration: none; box-shadow: 0 14px 36px rgb(12 16 14 / 0.28); font-family: system-ui, sans-serif; position: relative; } .ds-card:hover { transform: translateY(-3px); } .ds-card:focus-visible { outline: 3px solid #f3f0eb; outline-offset: 3px; } .ds-shot { display: block; aspect-ratio: 3/2; border-radius: 16px; background: #d9d3cb; } .ds-chip { position: absolute; top: 16px; right: 16px; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 999px; background: #2c2a28; color: #f3f0eb; } .ds-tag { margin: 12px 4px 0; font-size: 15px; font-weight: 600; } .ds-card h2 { margin: 2px 4px; font-size: 18px; font-weight: 700; letter-spacing: -0.03em; } .ds-card p:last-child { margin: 0 4px; color: #6e665e; font-size: 13px; line-height: 1.35; }"
+    },
+    {
+      "name": "Hoja",
+      "kind": "custom",
+      "refersTo": "sheet",
+      "description": "La segunda pantalla. Hueso, una medida corta, el mail.",
+      "html": "<section class=\"ds-sheet\"><h2>Pedilo es de San Carlos de Bolívar.</h2><p>¿Tenés un local? <a href=\"mailto:hola@pedilo.net\">Escribinos</a>.</p></section>",
+      "css": ".ds-sheet { max-width: 28em; padding: 48px 32px; border-radius: 28px 28px 0 0; background: #f3f0eb; color: #1c1917; box-shadow: 0 -28px 70px rgb(20 18 16 / 0.28); font-family: system-ui, sans-serif; } .ds-sheet h2 { margin: 0; font-size: 32px; font-weight: 500; letter-spacing: -0.03em; line-height: 1.35; } .ds-sheet p { margin: 28px 0 0; color: #6e665e; font-size: 18px; } .ds-sheet a { color: inherit; text-underline-offset: 3px; } .ds-sheet a:hover { text-decoration-thickness: 2px; } .ds-sheet a:focus-visible { outline: 3px solid #1c1917; outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La puerta de la ciudad",
+    "overview": "Pedilo en este sitio es una puerta, no una explicación. Alguien llega y elige. El fondo es una foto real del puente colgante de San Carlos de Bolívar, en blanco y negro y oscurecida. El lockup y las dos tarjetas viven juntos en el centro, en hueso, para que la ciudad se lea detrás.\n\nEl hub no toma el bordó de Delivery ni el verde de Market. Esos colores pertenecen a cada producto. Acá la página es ceniza, hueso y un solo acento: el punto de pedilo.",
+    "keyCharacteristics": [
+      "Foto real, nunca una escena generada.",
+      "Lockup horizontal: isotipo claro a la izquierda de pedilo. y el punto bordó.",
+      "Dos tarjetas, lado a lado también en el celular.",
+      "El centro de la foto va más oscuro que el resto, para que el texto claro se lea."
+    ],
+    "rules": [
+      { "name": "The Hub Stays Neutral Rule", "body": "Delivery y Market no pintan pedilo.net. Su color vive en el subdominio, no en esta pantalla.", "section": "colors" },
+      { "name": "The Readable Sky Rule", "body": "El texto claro se apoya en cielo oscurecido. El lugar va en hueso sólido. El punto bordó necesita un fondo cerca de la ceniza, no un gris medio.", "section": "colors" },
+      { "name": "The One Face Rule", "body": "No se carga una webfont para esta página. Si el lockup pide otra voz, se decide aparte y se autoaloja.", "section": "typography" },
+      { "name": "The Downward Shadow Rule", "body": "La sombra cae. No se usa un bloque duro sin blur ni un resplandor de color.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do usar el isotipo claro sobre el cielo oscuro y el rojo solo sobre cielo claro.",
+      "Do dejar el punto bordó como único acento del hub.",
+      "Do mantener las dos tarjetas lado a lado en el celular.",
+      "Do hornear el blur de la foto. No desenfocar con CSS."
+    ],
+    "donts": [
+      "Don't pintar la página con el bordó de Delivery ni el verde de Market.",
+      "Don't apilar el isotipo arriba de la palabra.",
+      "Don't recortar la foto justo en la esquina de la tarjeta.",
+      "Don't bajar la opacidad del lugar para suavizarlo."
+    ]
+  }
+}

@@ -3,7 +3,7 @@
 Landing global de la marca **Pedilo** en `https://pedilo.net`: presenta la marca y lleva a
 `delivery.pedilo.net` (Pedilo Delivery) y `market.pedilo.net` (Pedilo Market).
 
-Es un sitio estático: `index.html` con el CSS embebido y `assets/` al lado. Sin build, sin
+Es un sitio estático: `index.html`, `styles.css` y `assets/` al lado. Sin build, sin
 dependencias. La spec está en `SPEC.md`.
 
 ## Ver en local
@@ -55,4 +55,4 @@ cd /opt/pedilo-landing && sudo git pull
 
 ## Pendiente
 
-- WhatsApp y mail de contacto definitivos en el pie (`TODO` en `index.html`).
+- WhatsApp de contacto. El mail del pie es `hola@pedilo.net`.
